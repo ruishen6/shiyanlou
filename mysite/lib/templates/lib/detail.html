@@ -12,6 +12,16 @@
         <td>{{ book.author }}</td>
         <td>{{ book.pub_house }}</td>
         <td>{{ book.pub_date }}</td>
+        <td><a href="{% url 'lib:delBook' book.id %}">delete</a></td>
     </tr>
 {% endfor %}
+
 </table>
+
+<form action="{% url 'lib:addBook' %}" method='post' name='addBook'>
+    {% csrf_token %}
+    <p><span>book_name:</span><input type='text' name='name'></p>
+    <p><span>author:</span><input type='text' name='author'></p>
+    <p><span>pub_house:</span><input type='text' name='pub_house'></p>
+    <input type='submit' value='add'>
+</form>
