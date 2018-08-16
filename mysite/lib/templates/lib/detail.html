@@ -1,0 +1,17 @@
+<h1>Book List</h1>
+<table>
+    <tr>
+        <td>book_name</td>
+        <td>author</td>
+        <td>pub_house</td>
+        <td>pub_date</td>
+    </tr>
+{% for book in book_list.all %}
+    <tr>
+        <td>{{ book.name }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.pub_house }}</td>
+        <td>{{ book.pub_date }}</td>
+    </tr>
+{% endfor %}
+</table>
